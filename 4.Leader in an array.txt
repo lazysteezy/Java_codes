@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+
+    int arr[]={15,16,3,2,6,1,4};
+    int max;
+    int i,n=7;
+
+    max=arr[n-1];
+    printf("%d is a leader\n",max);
+    for(i=n-2;i>=0;i--)
+    {
+        if(arr[i] > max)
+        {
+
+            printf("%d is a leader:\n", arr[i]);
+            max=arr[i];
+        }
+
+
+    }
+
+    getch();
+
+}

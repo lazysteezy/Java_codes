@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+
+    int temp,k,c,n,r;
+    int r1,c1;
+    int i,j;
+    int arr[3][3];
+
+    printf("Enter the number of rows: ");
+    scanf("%d",&n);
+    printf("Enter the %d number of rows: ",n);
+
+    for(r=0;r<n;r++)
+    {
+        for(c=0;c<n;c++)
+        {
+            scanf("%d",&arr[r][c]);
+        }
+    }
+
+    for(r1=0;r1<n;r1++)
+    {
+        for(c1=0;c1<n;c1++)
+        {
+            for(r=0;r<n;r++)
+            {
+                for(c=0;c<n;c++)
+                {
+                    if(arr[r1][c1] < arr[r][c])
+                    {
+                        temp = arr[r1][c1];
+                        arr[r1][c1] = arr[r][c];
+                        arr[r][c] = temp;
+                    }
+                }
+            }
+        }
+    }
+
+    printf("sorted matrix is: \n");
+
+     for(r=0;r<n;r++)
+    {
+        for(c=0;c<n;c++)
+        {
+            printf("%3d",arr[r][c]);
+        }
+        printf("\n");
+    }
+
+   getch();
+}

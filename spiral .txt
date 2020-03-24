@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+
+
+
+   int n,i,j;
+   int arr[50][50];
+   int value=1;
+
+
+
+   printf("Enter the number of rows: ");
+   scanf("%d",&n);
+
+
+   int minrow=0;
+   int mincol=0;
+   int maxrow=n-1;
+   int maxcol=n-1;
+
+   while(value<=(n*n))
+   {
+       for(i=mincol;i<=maxcol;i++)
+       {
+           arr[minrow][i]=value++;
+       }
+       for(i=minrow+1;i<=maxrow;i++)
+       {
+           arr[i][maxcol] = value++;
+       }
+       for(i=maxcol-1;i>=mincol;i--)
+       {
+           arr[maxcol][i] = value++;
+       }
+       for(i=maxrow-1;i>=minrow+1;i--)
+       {
+           arr[i][mincol]=value++;
+       }
+
+
+    minrow++;
+    mincol++;
+    maxrow--;
+    maxcol--;
+
+
+   }
+
+   for(i=0;i<n;i++)
+   {
+       for(j=0;j<n;j++)
+        {
+
+           printf("%d\t",arr[i][j]);
+        }
+        printf("\n");
+          }
+
+
+
+
+
+
+    return 0;
+}

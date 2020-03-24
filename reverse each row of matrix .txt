@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+
+    int i,j,k,r,c,n;
+    int mat[3][5],t;
+
+    printf("Enter now of rows and col.: ");
+    scanf("%d",&n);
+
+    for(r=0;r<n;r++)
+		{
+			for(c=0;c<n;c++)
+			{
+				scanf("%d",&mat[r][c]);
+			}
+		}
+
+		for(k=0;k<n;k++)
+		{
+			for(i=0;i<n-1;i++)
+			{
+				for(j=0;j<n-1;j++)
+				{
+					if(mat[k][j] > mat[k][j+1])
+					{
+						t = mat[k][j];
+						mat[k][j] = mat[k][j+1];
+						mat[k][j+1] = t;
+					}
+				}
+			}
+		}
+		printf("\n");
+			for(r=0;r<n;r++)
+			{
+				for(c=0;c<n;c++)
+				{
+					printf("%3d",mat[r][c]);
+				}
+				printf("\n");
+			}
+			getch();
+}

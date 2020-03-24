@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+
+    int arr[] = {7,3,18,2};
+    int n=4;
+    int x=23;
+    int sum_here=0;
+    int i,j,k;
+    i=0,j=0;
+    while(i<n && j<n)
+    {
+        if(sum_here>x)
+        {
+            sum_here=sum_here-arr[i];
+            i++;
+        }
+        else if(sum_here==x)
+        {
+            printf("Subarray found:\n");
+            for(k=i;k<j;k++)
+            {
+                printf("%d",arr[k]);
+
+            }
+        }
+        else if(sum_here < x)
+        {
+            sum_here+=arr[j];
+            j++;
+        }
+    }
+    if(sum_here==x)
+    {
+       printf("Subarray found:\n");
+            for(k=i;k<j;k++)
+            {
+                printf("%d\t",arr[k]);
+
+            }
+    }
+    else
+    {
+        printf("not found");
+    }
+
+return 0;
+
+
+
+}

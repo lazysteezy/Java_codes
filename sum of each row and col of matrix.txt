@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+//scalar matrix multiplication
+int main(){
+  int a[3][3];
+  int b[3][3];
+  int sum1[20]={0};
+  int sum2[20]={0};
+  int i,j,k,n;
+
+  
+  // sum of each row and column
+  int num;
+  printf("Enter the 9 element of first matrix:  \n");
+  scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+  {
+      for(j=0;j<n;j++)
+      {
+scanf("%d",&a[i][j]);
+      }
+  }
+    for(i=0;i<n;i++)
+    {
+      for(j=0;j<n;j++)
+      {
+    sum1[i] = sum1[i]+a[i][j];
+    sum2[i] = sum2[i]+a[j][i];}
+    }
+    printf("matirx is:\n");
+
+  for(i=0;i<n;i++)
+  {
+      for(j=0;j<n;j++)
+      {
+          printf("%d\t",a[i][j]);
+      }
+    printf("\t%d\n",sum1[i]);
+    }
+    printf("\n");
+    for(i=0;i<n;i++)
+    {
+       printf("%d\t",sum2[i]);
+    }
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+    int a[] = {3,4,20,6,15,2,1,7};
+    int i,j;
+    int n=8;
+
+    int max_right=n-1;
+
+    for(i=n-2;i>=0;i--)
+    {
+        if(max_right>a[i])
+        {
+            a[i]=max_right;
+        }
+        else
+        {
+            max_right=a[i];
+        }
+
+
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%3d",a[i]);
+    }
+
+	getch();
+}

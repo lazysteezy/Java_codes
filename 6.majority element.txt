@@ -1,0 +1,38 @@
+class lazy {
+    public static void main(String args[]) {
+    	int nums[] = {1,1,2,1,3,5,1};
+        int maxcount=0;
+        int len=nums.length;
+        int index=-1,i,j;
+        int n=len/2;
+        
+        for(i=0;i<nums.length;i++)
+        {
+            int count=0;
+            for(j=0;j<nums.length;j++)
+            {
+                if(nums[i]==nums[j])
+                {
+                    count++;
+                }
+                if(maxcount<count)
+                {
+                    maxcount=count;
+                    index=i;
+                }
+            }
+            if(maxcount>n)
+            {
+                System.out.print(nums[index]);
+                break;
+               
+            }
+            else
+            {
+            	System.out.print("no element found");
+            	break;
+            }
+        }
+        
+    }
+}
