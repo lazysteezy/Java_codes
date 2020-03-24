@@ -1,0 +1,32 @@
+import java.util.*;
+
+class hi{
+
+
+public static void main(String args[]){
+	 
+      
+	int arr[] = {1, 1, 2, 2};
+	
+	HashMap<Integer,Integer> map = new LinkedHashMap<>();
+	
+	for(int i : arr)
+	{
+		map.put(i, map.getOrDefault(i, 0)+1);
+	}
+	Set<Map.Entry<Integer,Integer>> hmap = map.entrySet();
+	
+	for(Map.Entry<Integer,Integer>data : hmap)
+	{
+		if(data.getValue() >1)
+		{
+			System.out.print(data.getKey() + " ");
+		}
+	}
+	
+	
+}
+	
+	
+	
+}

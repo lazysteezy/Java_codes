@@ -1,0 +1,24 @@
+import java.util.*;
+
+class lazy
+{ 
+	public static void main(String args[])
+	{
+		String a = "abcde";
+		String b = "bcdeaa";
+		
+		if(a.length()==b.length() && (a+a).contains(b))
+		{
+			System.out.print(true);
+		}
+		else
+		{
+			System.out.print(false);
+		}
+		
+		
+	}
+}
+	
+
+

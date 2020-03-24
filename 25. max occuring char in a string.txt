@@ -1,0 +1,49 @@
+import java.util.*;
+
+class hi{
+	
+
+	public static void main(String args[])
+	{
+		
+		
+		String st = "aabbccccee";
+		char x[] = st.toCharArray();
+		
+		HashMap<Character,Integer> map = new HashMap<>();
+		
+		int size = x.length;
+		int i=0;
+		while(i!=size)
+		{
+			if(map.containsKey(x[i])==false)
+			{
+				map.put(x[i],1);
+			}
+			else
+			{
+				int oldval = map.get(x[i]);
+				int newval = oldval+1;
+				map.put(x[i],newval);
+			}
+			i++;
+		}
+		char freq=' ';
+		int maxval=0;
+		Set<Map.Entry<Character,Integer>> hmap = map.entrySet();
+		for(Map.Entry<Character,Integer>data:hmap)
+		{
+			if(data.getValue()>maxval)
+			{
+				freq = data.getKey();
+				maxval = data.getValue();
+				
+			}
+		}
+		System.out.print(freq+ " occur " +maxval+ " times ");
+		
+		
+		
+	}
+}
+

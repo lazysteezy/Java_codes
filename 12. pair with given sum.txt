@@ -1,0 +1,39 @@
+import java.util.HashSet;
+
+class lazy
+{ 
+	public static void main(String args[])
+	{
+		
+		int arr[] = {1,2,3,4,6,7,8,9};
+		int n=arr.length;
+		int sum=10,i,j;
+		
+		int start=0;int end=n-1;
+		int array_sum=arr[start] +arr[end];
+		
+		while(start<end)
+		{
+			if(array_sum > sum)
+			{
+				end--;
+			}
+			if(array_sum < sum)
+			{
+				start++;
+			}
+			if(array_sum == sum)
+			{
+				System.out.println(arr[start] + "," + arr[end]);
+				start++;
+				end--;
+			}
+		}
+		
+		
+		
+		
+		
+	}
+	
+}

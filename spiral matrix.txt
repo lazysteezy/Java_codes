@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+class hi{
+	public static void main(String args[])
+	{
+		Scanner sc  =new Scanner(System.in);
+		System.out.print("Enter the size of matrix: ");
+		int n = sc.nextInt();
+		int i,j;
+		int spiral1[][] = new int[n][n];
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				spiral1[i][j] = sc.nextInt();
+			}
+		}
+		System.out.print("Original matrix are: \n");
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<n;j++)
+			{
+				System.out.print(spiral1[i][j] + " ");
+			}
+			System.out.print(" \n");
+		}
+		int spiral[][] = new int[n][n];
+		int minrow=0;
+		int mincol=0;
+		int maxrow=n-1;
+		int maxcol=n-1;
+		int count=1;
+		
+		
+		while(count<=n*n)
+		{
+			for(i=mincol;i<=maxcol;i++)
+			{
+				spiral[minrow][i] = count++;
+				
+			}
+			for(i=minrow+1;i<=maxrow;i++)
+			{
+				spiral[i][maxcol]=count++;
+			}
+			for(i=maxcol-1;i>=mincol;i--)
+			{
+				spiral[maxrow][i] = count++;
+			}
+			for(i=maxrow-1;i>=minrow+1;i--)
+			{
+				spiral[i][mincol] = count++;
+			}
+		
+		
+		minrow++;
+		 mincol++;
+		 maxrow--;
+		 maxcol--;
+		}	 
+		System.out.println("Spiral matrix is: \n"); 
+		for(i=0;i<spiral.length;i++)
+		{
+			for(j=0;j<spiral.length;j++)
+			{
+				System.out.print(spiral[i][j] + " ");
+			}
+			System.out.print("\n");
+		}
+		
+		
+		
+	}
+}

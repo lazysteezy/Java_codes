@@ -1,0 +1,54 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+class lazy{
+	
+	public static void main(String args[])
+	{
+	
+		lazy lcs = new lazy();
+		String a = "abcde";
+		String b ="ace";
+		
+		
+		int x = lcs.longestCommonSubsequence(a.toCharArray(),b.toCharArray());
+		System.out.print(x);
+		
+	}
+	
+
+	
+	public int longestCommonSubsequence(char str[],char str1[])
+	{
+		int temp[][] = new int[str.length+1][str1.length+1];
+		int max=0;
+		
+		for(int i=1;i<temp.length;i++)
+		{
+			for(int j=1;j<temp[i].length;j++)
+			{
+				if(str[i-1] == str1[j-1])
+				{
+					temp[i][j] = temp[i-1][j-1]+1;
+				}
+				else
+				{
+					temp[i][j] = Math.max(temp[i][j-1],temp[i-1][j]);
+				}
+				if(temp[i][j] > max)
+				{
+					max = temp[i][j];
+				}
+			}
+		}
+		
+		return max;
+	}
+	
+}
+
+
+
+
+
+

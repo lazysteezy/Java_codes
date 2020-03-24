@@ -1,0 +1,25 @@
+class lazy
+{ 
+	public static void main(String args[])
+	{
+		String str = "   hi  my name         arun";
+		char[] strArray = str.toCharArray();
+		StringBuffer s = new StringBuffer();
+		int i;
+		for(i=0;i<strArray.length;i++)
+		{
+			if(strArray[i]!=' ' && strArray[i]!='\t')
+			{
+				s.append(strArray[i]);
+			}
+		}
+		String space =  s.toString();
+	
+		System.out.print(space);
+		
+		}
+		
+}
+	
+
+

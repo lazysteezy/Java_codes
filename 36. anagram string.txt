@@ -1,0 +1,35 @@
+import java.util.*;
+
+class lazy
+{ 
+	public static void main(String args[])
+	{
+		
+		String str1 = "listen";
+		String str2 = "silent";
+		char y[] = str1.toCharArray();
+		char z[] = str2.toCharArray();
+	
+		Arrays.sort(y);
+		Arrays.sort(z);
+		
+		boolean result = Arrays.equals(y,z);
+		
+		if(result==true)
+		{
+			System.out.println("string are anagram");
+			
+		}
+		else
+		{
+			System.out.println("not anagram ");
+		}
+		
+		
+		
+		}
+		
+}
+	
+
+

@@ -1,0 +1,42 @@
+
+import java.util.*;
+ 
+public class hello {
+ 
+	public static void main(String args[]) {
+		
+		
+		int a[] = {4,2,1,7};
+		int left[] = new int[a.length];
+		int right[] = new int[a.length];
+		int ans[] = new int[a.length];
+		int len=a.length;
+		int i,j;
+		
+		left[0] = 1;
+		
+		for(i=1;i<a.length;i++)
+		{
+			left[i] = left[i-1]*a[i-1];
+		}
+		 right[len-1]=1;
+		 
+		for(i=len-2;i>=0;i--)
+		{
+			right[i]=right[i+1]*a[i+1];
+		}
+		
+		for(i=0;i<a.length;i++)
+		{
+			ans[i]=left[i]*right[i];
+		}
+		
+		for(i=0;i<a.length;i++)
+		{
+			System.out.print(ans[i] + " ");
+		}
+		
+		
+		
+	}
+}

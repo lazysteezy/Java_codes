@@ -1,0 +1,38 @@
+import java.util.*;
+
+class lazy
+{ 
+	public static void main(String args[])
+	{
+		
+		int arr[] = {1,2,3,4,5,6,7,8,9};
+		int a,b,c;
+		a=b=c=0;
+		int len=arr.length;
+		
+		int i=0;
+		while(i<len)
+		{
+			if(arr[i]>a)
+			{
+				c=b;
+				b=a;
+				a = arr[i];
+			}
+			else if(arr[i] > b)
+			{
+				c=b;
+				b=arr[i];
+			}
+			else if(arr[i]>c)
+			{
+				c= arr[i];
+			}
+			i++;
+		}
+		System.out.print(a+" " +b +" " + c);
+		
+		
+	}
+	
+}

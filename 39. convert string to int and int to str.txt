@@ -1,0 +1,27 @@
+import java.util.*;
+
+class lazy
+{ 
+	public static void main(String args[])
+	{
+		
+		String str1 = "65";
+		int i = Integer.parseInt(str1);
+		System.out.println(str1);
+			System.out.println(i);
+		
+			
+			
+// integer to string---
+		int x=65;
+		String y = Integer.toString(x);
+		System.out.println(x);
+		System.out.println(y);
+		
+		
+		}
+		
+}
+	
+
+

@@ -1,0 +1,41 @@
+import java.util.*;
+
+class hi{
+
+
+public static void main(String args[]){
+	
+	int arr[][] = {{0, 0, 1, 0},  
+            {1,1,1,0},  
+            {0, 0, 0, 0},  
+            {1,1,1,0}}; 
+	
+	int n=4;
+	
+	int i,j;
+	int index=0;
+	for(i=0,j=n-1; i<n; i++)
+	{
+		
+		
+			while( j >=0 && arr[i][j] == 0)
+			{
+				index=i;
+				j--;
+			}
+			
+		}
+	
+System.out.println("row is" + index+1);
+System.out.println( 1 + " occur " + ( n-1-j));
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+}
